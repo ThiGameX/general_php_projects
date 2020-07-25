@@ -1,0 +1,185 @@
+:root{
+	--header-height: 80px;
+	--text-color: rgba(212,212,212,.9);
+	--before-rotation: 0deg;
+	--after-rotation: 0deg;
+	--before-top: 30%;
+	--after-top: 70%;
+	--popup-timebar-left: 0;
+	--popup-transition: 4s linear;
+}
+
+::placeholder{
+	color: #ffffff36;
+}
+
+::selection{
+	color: #262626;
+	background-color: rgba(120,120,120,.62);
+	text-shadow: none;
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+	cursor: pointer;
+}
+
+::-webkit-scrollbar-track {
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgba(20,120,180,.8); 
+	border-radius: 2px;
+}
+
+#usu4-1d{display: none;}
+
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'Kanit', sans-serif;
+	list-style: none;
+	text-decoration: none;
+	box-sizing: border-box;
+	color: var(--text-color);
+}
+
+body{
+	background-color: #0e0e0e;
+	overflow: hidden;
+	width: 100vw;
+}
+
+#login-box{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 350px;
+	height: 380px;
+	background-color: rgba(24,24,24,1);
+}
+#login-box h2{
+	margin-top: 12px;
+	text-align: center;
+	color: white;
+	font-family: Kanit;
+	font-size: 38px;
+}
+
+#login-box input{
+	outline: none;
+	border: none;
+	position: relative;
+	top: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+	margin: 10px 0;
+	width: 80%;
+	height: 48px;
+	font-size: 24px;
+	box-sizing: border-box;
+	padding: 8px;
+	color: white;
+	background-color: rgba(60,60,60,.8);
+	font-family: Kanit;
+
+}
+#login-box button{
+	outline: none;
+	border: none;
+	position: relative;
+	top: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+	margin: 10px 0;
+	width: 80%;
+	height: 48px;
+	font-size: 26px;
+	box-sizing: border-box;
+	color: white;
+	background-color: rgba(20,120,180,.8);
+	font-family: Kanit;
+	cursor: pointer;
+}
+
+#login-box .forgot-pass{
+	position: relative;
+	top: 12px;
+	left: 28px;
+	text-align: center;
+	text-decoration: none;
+	color: white;
+	font-size: 14px;
+	padding: 6px;
+}
+
+
+/*Popups*/
+#message-bg{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0,0,0,.85);
+	opacity: 0;
+	transition: opacity .45s ease-in-out;
+	z-index: -1;
+}
+#success-login-message,
+#success-register-message{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%) scale(0);
+	width: 520px;
+	height: 180px;
+	background-color: rgba(60,60,60,1);
+	z-index: 1000;
+	box-shadow: 0 0 36px 8px rgba(60,60,60,.8);
+	transition: transform .4s;
+}
+#success-login-message h1,
+#success-register-message h1{
+	font-size: 48px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	transform: translate(-50%,-50%);
+	text-align: center;
+}
+
+#general-popup-wrapper .popup-content{
+	position: absolute;
+	bottom: 2vh;
+	left: -220px;
+	width: 200px;
+	background-color: rgba(80,80,80,.8);
+	color: rgba(200,200,200,.7);
+	box-sizing: border-box;
+	padding: 8px;
+	transition: left .6s ease-in-out;
+	cursor: pointer;
+}
+#general-popup-wrapper .general-popup-timebar{
+	position: absolute;
+	width: 100%;
+	height: 5px;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(40,40,40,1);
+	overflow: hidden;
+}
+#general-popup-wrapper .general-popup-timebar:before{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: var(--popup-timebar-left);
+	width: 100%;
+	height: 100%;
+	background-color: rgba(100,100,100,1);
+	transition: var(--popup-transition);
+}
